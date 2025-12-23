@@ -148,13 +148,13 @@ was aggregated or not. Particles that were not aggregated had a color of either 
 or `0` (black), while particles that were aggregated had colors ranging from `2-15`, (increasingly bright shades of green). 
 All particles were stored in an array.
 
-Collision detection was implemented by with the help of fixed point precision types, with 16 decimal places, a [alpha max beta min](https://en.wikipedia.org/wiki/Alpha_max_plus_beta_min_algorithm)
+Collision detection was implemented with the help of fixed point precision types, with 16 decimal places, an [alpha max beta min](https://en.wikipedia.org/wiki/Alpha_max_plus_beta_min_algorithm)
 square root approximation algorithm, and our pixel backing array.
 
 Our collision detector calculates the distance between a particle's current location
 and its new desired location using the alpha max beta min algorithm.
 It then uses this distance to determine an increment, which can be thought of as a vector of unit length
-in the direction of the particles updated location. With the help of this "increment vector", each pixel in between
+in the direction of the particle's updated location. With the help of this "increment vector", each pixel in between
 the particle's current location and new location is checked to see if it is touching the existing aggregate or not.
 If a pixel is determined to
 be touching our aggregate, the particle is moved to that pixel (falling short of the intended update location)
